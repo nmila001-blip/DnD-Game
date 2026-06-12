@@ -1,4 +1,4 @@
-#ifndef
+#ifndef HERO_H
 #define HERO_H
 #include <string>
 class hero{
