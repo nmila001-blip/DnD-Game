@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Hero.h"
+#include "hero.h"
 #include "Enemy.h"
 using namespace std;
 void Hero::attack(Enemy& enemy) {
