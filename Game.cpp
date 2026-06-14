@@ -8,6 +8,7 @@ using namespace std;
 
 Hero hero;
 void Game::combat(std::vector<Enemy> &enemies) {
+    int something = 0;
     for(Enemy& enemy : enemies) {
         cout << "A " << enemy.name << " appears!" << endl;
         do{

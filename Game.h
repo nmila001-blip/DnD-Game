@@ -4,7 +4,6 @@
 #include <vector>
 #include "Hero.h"
 #include "Enemy.h"
-int something = 0;
 class Game {
 public:
     void combat(std::vector<Enemy> &enemies);
