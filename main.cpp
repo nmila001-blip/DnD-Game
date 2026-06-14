@@ -1,5 +1,5 @@
 #include <iostream>
-#include "hero.h"
+#include "Hero.h"
 #include "Enemy.h"
 #include "Game.h"
 using namespace std;

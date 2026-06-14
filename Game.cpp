@@ -7,7 +7,6 @@
 using namespace std;
 
 Hero hero;
-int something = 0;
 void Game::combat(std::vector<Enemy> &enemies) {
     for(Enemy& enemy : enemies) {
         cout << "A " << enemy.name << " appears!" << endl;
@@ -57,6 +56,8 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 }
                 if(something == enemies.size()){
                     cout << "you have cleared the level!" << endl;
+                    cout << "the enemy dropped some loot!" << endl;
+                    cout << something;
                     Loot loot;
                     loot.giveLoot(hero);
                 }
