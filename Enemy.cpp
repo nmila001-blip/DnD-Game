@@ -9,5 +9,8 @@ void Enemy::attack(Hero& hero) {
         damage = 0;
     }
     hero.hp -= damage;
+    if (hero.hp < 0) {
+        hero.hp = 0;
+    }
     cout << name << " attacks " << hero.name << " for " << damage << " damage!" << endl;
    }
