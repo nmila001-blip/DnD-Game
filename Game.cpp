@@ -42,7 +42,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "invalid input, try again" << endl;
             continue;
         } 
-                if(enemy.hp > 0&&choice ==1||choice == 2){
+                if(enemy.hp > 0&&(choice ==1||choice == 2)){
                     enemy.attack(hero);
                     cout << "your hp: " << hero.hp << endl;
                 }
