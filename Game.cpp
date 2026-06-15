@@ -8,6 +8,7 @@ using namespace std;
 
 Hero hero;
 void Game::combat(std::vector<Enemy> &enemies) {
+    bool algo = true;
     int something = 0;
     for(Enemy& enemy : enemies) {
         cout << "A " << enemy.name << " appears!" << endl;
@@ -20,13 +21,16 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "4. Display Info" << endl;
             cin >> choice;
             if(choice == 1){
+                algo = true;
                 hero.attack(enemy);
                 cout << "enemy hp: " << enemy.hp << endl;
             }
             else if(choice == 2){
+                algo = true;
                 hero.heal();
             }
             else if(choice == 3){
+                algo = false;
                 if(hero.spd > enemy.spd){
                     cout << "you have successfully ran away!" << endl;
                     break;
@@ -37,16 +41,18 @@ void Game::combat(std::vector<Enemy> &enemies) {
             }  
         }
         else if(choice ==4){
+            algo = false;
                 hero.displayInfo();
         }
         else{
             cout << "invalid input, try again" << endl;
             continue;
         } 
-                if(enemy.hp > 0&&(choice ==1||choice == 2)){
+                if(algo){
                     enemy.attack(hero);
                     cout << "your hp: " << hero.hp << endl;
                 }
+                
                 if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
             }
