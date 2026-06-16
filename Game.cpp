@@ -48,7 +48,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "invalid input, try again" << endl;
             continue;
         } 
-                if(algo){
+                if(algo = true){
                     enemy.attack(hero);
                     cout << "your hp: " << hero.hp << endl;
                 }
