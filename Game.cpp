@@ -8,6 +8,7 @@ using namespace std;
 
 Hero hero;
 void Game::combat(std::vector<Enemy> &enemies) {
+    hero.hp = 100;
     bool algo = true;
     int something = 0;
     for(Enemy& enemy : enemies) {
@@ -48,7 +49,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "invalid input, try again" << endl;
             continue;
         } 
-                if(algo = true){
+                if(algo == true){
                     enemy.attack(hero);
                     cout << "your hp: " << hero.hp << endl;
                 }
