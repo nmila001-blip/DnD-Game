@@ -31,6 +31,8 @@ void Loot::giveLoot(Hero& hero) {
         }else{
             cout << "you found " << whatUGet << " but it was useless" << endl;
         }
+        if(true){
          cout << "you found " << whatUGet << endl;
         }
+    }
     }

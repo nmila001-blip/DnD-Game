@@ -1,101 +1,38 @@
 #include <iostream>
-#include "Game.h"
-#include "Hero.h"
 #include "loot.h"
-#include "Enemy.h"
-#include <vector>
-using namespace std;
+#include "Hero.h"
 
-Hero hero;
-void Game::combat(std::vector<Enemy> &enemies) {
-    hero.hp = 100;
-    bool algo = true;
-    int something = 0;
-    for(Enemy& enemy : enemies) {
-        cout << "A " << enemy.name << " appears!" << endl;
-        do{
-            int choice;
-            cout << "Would you like to: " << endl;
-            cout << "1. Attack" << endl;
-            cout << "2. Heal" << endl;
-            cout << "3. run away" <<endl;
-            cout << "4. Display Info" << endl;
-            cin >> choice;
-            if(choice == 1){
-                algo = true;
-                hero.attack(enemy);
-                cout << "enemy hp: " << enemy.hp << endl;
-            }
-            else if(choice == 2){
-                algo = true;
-                hero.heal();
-            }
-            else if(choice == 3){
-                algo = false;
-                if(hero.spd > enemy.spd){
-                    cout << "you have successfully ran away!" << endl;
-                    break;
-            }
-                else{
-                    cout << "you failed to run away!" << endl;
-                
-            }  
+using namespace std;
+void Loot::giveLoot(Hero& hero) {
+    int lootChance = rand()%200+1 + hero.luck;
+    vector<string> lootItems = {"a legendary sword", "a shield", "a potion","nothing useful just a stick","an explosion","an explosion" ,"potion", "a shield","a piece of armor", "strength potion"};
+    if(lootChance <= 75){
+        cout << "you found nothing!" << endl;
+
+    }else{
+        string whatUGet = lootItems[rand()%lootItems.size()];
+        if(whatUGet == "a legendary sword"){
+            hero.strength += 35;
         }
-        else if(choice ==4){
-            algo = false;
-                hero.displayInfo();
+        else if(whatUGet == "a shield"){
+            hero.hp += 20;
         }
-        else{
-            cout << "invalid input, try again" << endl;
-            continue;
-        } 
-                if(algo == true){
-                    enemy.attack(hero);
-                    cout << "your hp: " << hero.hp << endl;
-                }
-                
-                if(hero.hp <= 0){
-                cout << "you have been defeated, better luck next time" << endl;
-            }
-                if(enemy.hp <= 0){
-                    cout << "you have defeated the " << enemy.name << "!" << endl;
-                    
-                    something++;
-                }
-                if(something == enemies.size()){
-                    cout << "you have cleared the level!" << endl;
-                    cout << "the enemy dropped some loot!" << endl;
-                    cout << something;
-                    Loot loot;
-                    loot.giveLoot(hero);
-                }
-        }while(enemy.hp > 0 && hero.hp > 0);
+        else if(whatUGet == "a potion"){
+            hero.heal();
+        }
+        else if(whatUGet == "a piece of armor"){
+            hero.hp += 10;
+        }
+        else if(whatUGet == "an explosion"){
+            hero.hp -= 75;
+        }
+        else if(whatUGet == "strength potion"){
+            hero.strength += 5;
+        }else{
+            cout << "you found " << whatUGet << " but it was useless" << endl;
+        }
+        if(true){
+         cout << "you found " << whatUGet << endl;
+        }
     }
-}
-void Game::levelOne() {
-    vector<Enemy> enemies;
-    enemies.push_back(Enemy("zombie", 5, 5, 30));
-    enemies.push_back(Enemy("skeleton", 2, 10, 50));
-    combat(enemies);
-}
-void Game::levelTwo(){
-    vector<Enemy> enemies;
-    enemies.push_back(Enemy("living armor", 15, 5, 80));
-    enemies.push_back(Enemy("living canon", 20, 1, 150));
-    combat(enemies);
-}
-void Game::levelThree(){
-    vector<Enemy> enemies;
-    enemies.push_back(Enemy("Timmy_Tuff_Knuckles", 30, 20, 300));
-    combat(enemies);
-}
-void Game::Run() {
-    hero.nameing();
-    levelOne();
-    if(hero.hp > 0){
-        levelTwo();
     }
-    if(hero.hp > 0){
-        levelThree();
-    }
-}
