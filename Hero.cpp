@@ -46,6 +46,8 @@ void Hero::nameing() {
         cout << "invalid input, try again" << endl;
         continue;
     }
+    hp = 100;
+    luck = rand()%25+1;
     break;
 }
 }
