@@ -33,15 +33,27 @@ void Hero::displayInfo() {
 void Hero::nameing() {
     while(true){
     cout << "what is your name?" << endl;
-    cin >> name;
+    getline(cin, name);
+    cin.ignore(100, '\n');
     cout << "what is your strength?" << endl;
-    cin >> strength;
+    if(!(cin >> strength)){
+        cout << "invalid input, try again" << endl;
+        cin.clear();
+        cin.ignore(500, '\n');
+        continue;
+    }
     cout << "what is your speed?" << endl;
-    cin >> spd;
+    if(!(cin >> spd)){
+        cout << "invalid input, try again" << endl;
+        cin.clear();
+        cin.ignore(500, '\n');
+        continue;
+    }
     if(strength < 0 || spd < 0){
         cout << "invalid input, try again" << endl;
         continue;
     }
+
     else if(strength > 20 || spd > 20){
         cout << "invalid input, try again" << endl;
         continue;

@@ -48,6 +48,11 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "invalid input, try again" << endl;
             continue;
         } 
+        if(enemy.hp <= 0){
+            cout << "you have defeated the " << enemy.name << "!" << endl;
+            something++;
+            break;
+        }
                 if(algo&& enemy.hp > 0){
                     enemy.attack(hero);
                     cout << "your hp: " << hero.hp << endl;
@@ -56,11 +61,6 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
             }
-                if(enemy.hp <= 0){
-                    cout << "you have defeated the " << enemy.name << "!" << endl;
-                    
-                    something++;
-                }
                 if(something == enemies.size()){
                     cout << "you have cleared the level!" << endl;
                     cout << "the enemy dropped some loot!" << endl;
