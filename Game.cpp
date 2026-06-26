@@ -8,7 +8,6 @@ using namespace std;
 Hero hero;
 void Game::combat(std::vector<Enemy> &enemies) {
     Loot loot;
-                    loot.giveLoot(hero);
     bool algo = true;
     int something = 0;
     for(Enemy& enemy : enemies) {
@@ -42,7 +41,6 @@ void Game::combat(std::vector<Enemy> &enemies) {
             
             }
         }
-        cout << "A " << enemy.name << " appears!" << endl;
         do{
             int choice;
             cout << "Would you like to: " << endl;
@@ -95,7 +93,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 if(something == enemies.size()){
                     cout << "you have cleared the level!" << endl;
                     cout << "the enemy dropped some loot!" << endl;
-                    
+                    loot.giveLoot(hero);
                 }
         }while(enemy.hp > 0 && hero.hp > 0);
     }
