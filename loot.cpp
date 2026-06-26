@@ -5,7 +5,7 @@
 using namespace std;
 void Loot::giveLoot(Hero& hero) {
     int lootChance = rand()%200+1 + hero.luck;
-    vector<string> lootItems = {"a legendary sword", "a shield", "a potion","nothing useful just a stick","an explosion","an explosion" ,"potion", "a shield","a piece of armor", "strength potion"};
+    vector<string> lootItems = {"a legendary sword", "a shield", "a potion","nothing useful just a stick","an explosion","an explosion" ,"potion", "a shield","a piece of armor", "strength potion","a ribbon"};
     if(lootChance <= 75){
         cout << "you found nothing!" << endl;
 
@@ -34,5 +34,6 @@ void Loot::giveLoot(Hero& hero) {
         if(true){
          cout << "you found " << whatUGet << endl;
         }
+
     }
     }

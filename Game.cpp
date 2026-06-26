@@ -7,10 +7,41 @@
 using namespace std;
 Hero hero;
 void Game::combat(std::vector<Enemy> &enemies) {
+    Loot loot;
+                    loot.giveLoot(hero);
     bool algo = true;
     int something = 0;
     for(Enemy& enemy : enemies) {
+        if(enemy.name =="zombie"){
+            cout << "You smell a pungent smell\n";
+            cout << "and it grows stronger as time goes time\n";
+            cout << "and then a group of zombies appear\n";
+        }
+        else if(enemy.name == "skeleton"){
+            cout<< "you start to hear faint clacking\n";
+            cout << "over time the clacking gets louder\n until a skeleton archer appears and begins to start shooting at you do you\n";
+        }
+        else if(enemy.name == "living armor"){
+            cout << "you enter a room full of armour and you sense some thing ominous\n";
+            cout << "almost as if their alive?\n";
+            cout << "then suddenly a suit of armor stumbles forward\n then sprints twords you,raises its sword and brings it down hard\n";
+        }
+        else if (enemy.name == "living canon"){
+            cout <<"you find a canon but it seems different and then suddenly it attacks\n";
+            enemy.attack(hero);
+        }
+        else if (enemy.name == "Timmy_Tuff_Knuckles"){
+            if(enemy.hp <=0){
+                            
+                 cout << "you defeated the boss but wait a minute\n";
+                    cout << "you see the ghost and it says thank you for freeing me from the ribbon\n";
+                    cout << "and then it says goodbye and leaves\n";
+                    cout << "and then you slowly become insane and become the next boss\n";
+                    cout << "can't you hear a new player is coming\n";
         
+            
+            }
+        }
         cout << "A " << enemy.name << " appears!" << endl;
         do{
             int choice;
@@ -64,8 +95,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 if(something == enemies.size()){
                     cout << "you have cleared the level!" << endl;
                     cout << "the enemy dropped some loot!" << endl;
-                    Loot loot;
-                    loot.giveLoot(hero);
+                    
                 }
         }while(enemy.hp > 0 && hero.hp > 0);
     }
