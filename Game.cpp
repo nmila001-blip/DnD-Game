@@ -29,18 +29,10 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout <<"you find a canon but it seems different and then suddenly it attacks\n";
             enemy.attack(hero);
         }
-        else if (enemy.name == "Timmy_Tuff_Knuckles"){
-            if(enemy.hp <=0){
-                            
-                 cout << "you defeated the boss but wait a minute\n";
-                    cout << "you see the ghost and it says thank you for freeing me from the ribbon\n";
-                    cout << "and then it says goodbye and leaves\n";
-                    cout << "and then you slowly become insane and become the next boss\n";
-                    cout << "can't you hear a new player is coming\n";
-        
-            
-            }
-        }
+if(enemy.name == "Timmy_Tuff_Knuckles") {
+    cout << "boss intro text";
+}
+
         do{
             int choice;
             cout << "Would you like to: " << endl;
@@ -80,6 +72,11 @@ void Game::combat(std::vector<Enemy> &enemies) {
         if(enemy.hp <= 0){
             cout << "you have defeated the " << enemy.name << "!" << endl;
             something++;
+            if(something == enemies.size()){
+                    cout << "you have cleared the level!" << endl;
+                    cout << "the enemy dropped some loot!" << endl;
+                    loot.giveLoot(hero);
+                }
             break;
         }
                 if(algo&& enemy.hp > 0){
@@ -90,13 +87,10 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
             }
-                if(something == enemies.size()){
-                    cout << "you have cleared the level!" << endl;
-                    cout << "the enemy dropped some loot!" << endl;
-                    loot.giveLoot(hero);
-                }
+                
         }while(enemy.hp > 0 && hero.hp > 0);
     }
+    
 }
 void Game::levelOne() {
     vector<Enemy> enemies;
