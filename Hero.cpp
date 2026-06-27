@@ -34,7 +34,6 @@ void Hero::nameing() {
     while(true){
     cout << "what is your name?" << endl;
     getline(cin, name);
-    cin.ignore(100, '\n');
     cout << "what is your strength?" << endl;
     if(!(cin >> strength)){
         cout << "invalid input, try again" << endl;
