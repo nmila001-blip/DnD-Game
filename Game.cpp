@@ -24,6 +24,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "you enter a room full of armour and you sense some thing ominous\n";
             cout << "almost as if their alive?\n";
             cout << "then suddenly a suit of armor stumbles forward\n then sprints twords you,raises its sword and brings it down hard\n";
+            enemy.attack(hero);
         }
         else if (enemy.name == "living canon"){
             cout <<"you find a canon but it seems different and then suddenly it attacks\n";
