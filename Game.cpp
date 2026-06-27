@@ -97,6 +97,21 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                     cout << "the enemy dropped some loot!" << endl;
                     loot.giveLoot(hero);
                 }
+                int decision;
+                cout << "would you like to:" << endl;
+                cout << "1. Continue to the next fight" << endl;
+                cout << "2. heal" << endl;
+                cin >> decision;
+                if(decision == 1){
+                    cout << "you continue to the next fight" << endl;
+                }
+                else if(decision == 2){
+                    hero.heal();
+                }
+                else{
+                    cout << "invalid input, try again" << endl;
+                    continue;
+                }
             break;
                 }
         }
