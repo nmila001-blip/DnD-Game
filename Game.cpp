@@ -25,10 +25,18 @@ void Game::combat(std::vector<Enemy> &enemies) {
             cout << "almost as if their alive?\n";
             cout << "then suddenly a suit of armor stumbles forward\n then sprints twords you,raises its sword and brings it down hard\n";
             enemy.attack(hero);
+            if(hero.hp <= 0){
+                cout << "you have been defeated, better luck next time" << endl;
+                break;
+            }
         }
         else if (enemy.name == "living canon"){
             cout <<"you find a canon but it seems different and then suddenly it attacks\n";
             enemy.attack(hero);
+            if(hero.hp <= 0){
+                cout << "you have been defeated, better luck next time" << endl;
+                break;
+            }
         }
 if(enemy.name == "Timmy_Tuff_Knuckles") {
     cout << "you enter the final floor so close to your final goal of beating the dungeon\n";
