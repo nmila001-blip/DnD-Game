@@ -30,7 +30,12 @@ void Game::combat(std::vector<Enemy> &enemies) {
             enemy.attack(hero);
         }
 if(enemy.name == "Timmy_Tuff_Knuckles") {
-    cout << "boss intro text";
+    cout << "you enter the final floor so close to your final goal of beating the dungeon\n";
+    cout << "hello there adventurer, he says in a deep voice\n";
+    cout << "OMG im not ready for this you thought to yourself\n";
+    cout << "Oh having second thoughts are we? he says in a mocking tone\n";
+    cout << "you start to feel a sense of dread and fear\n";
+    cout << "now is when you decide your fate for once and for all\n";
 }
 
         do{
@@ -86,8 +91,16 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                 
                 if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
+                break;
             }
-                
+                if(enemy.name == "Timmy_Tuff_Knuckles" && enemy.hp <= 0){
+                    cout << "you defeated the boss and wait a minute\n";
+                    cout << "you see the ghost and it says thank you for freeing me from the ribbon\n";
+                    cout << "and then it says goodbye and leaves\n";
+                    cout << "and then you become insane and become the next boss\n";
+                    cout << "can you hear a new player is coming\n";
+                    exit(0);
+                }
         }while(enemy.hp > 0 && hero.hp > 0);
     }
     
