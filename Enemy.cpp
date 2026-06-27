@@ -13,5 +13,5 @@ void Enemy::attack(Hero& hero) {
         hero.hp = 0;
     }
     cout << name << " attacks " << hero.name << " for " << damage << " damage!" << endl;
-    cout << "your hp: " << hero.hp;
+    cout << "your hp: " << hero.hp << endl;
    }
