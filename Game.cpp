@@ -76,6 +76,12 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
             continue;
         } 
         if(enemy.hp <= 0){
+                    if(enemy.name == "Timmy_Tuff_Knuckles" && enemy.hp <= 0){
+                    cout << "you defeated the boss but wait a minute\n";
+                    cout << "and then you slowly become insane and later become the next boss\n";
+                    cout << "you can hear a new player is coming\n";
+                    exit(0);
+                }else{
             cout << "you have defeated the " << enemy.name << "!" << endl;
             something++;
             if(something == enemies.size()){
@@ -84,24 +90,18 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                     loot.giveLoot(hero);
                 }
             break;
+                }
         }
                 if(algo&& enemy.hp > 0){
                     enemy.attack(hero);
-                    cout << "your hp: " << hero.hp << endl;
+                    
                 }
                 
                 if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
                 break;
             }
-                if(enemy.name == "Timmy_Tuff_Knuckles" && enemy.hp <= 0){
-                    cout << "you defeated the boss and wait a minute\n";
-                    cout << "you see the ghost and it says thank you for freeing me from the ribbon\n";
-                    cout << "and then it says goodbye and leaves\n";
-                    cout << "and then you become insane and become the next boss\n";
-                    cout << "can you hear a new player is coming\n";
-                    exit(0);
-                }
+                
         }while(enemy.hp > 0 && hero.hp > 0);
     }
     
