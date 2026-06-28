@@ -12,7 +12,7 @@ public:
     }
     Enemy() : name("Enemy"), strength(10), spd(10), hp(50) {
     }
-   void attack(Hero& hero);
-
+    void attack(Hero& hero); 
+    void displayInfo();
 };
 #endif // ENEMY_H

@@ -54,6 +54,7 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
             cout << "2. Heal" << endl;
             cout << "3. run away" <<endl;
             cout << "4. Display Info" << endl;
+            cout << "5. Display Enemy info" << endl;
             cin >> choice;
             if(choice == 1){
                 algo = true;
@@ -66,18 +67,24 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
             }
             else if(choice == 3){
                 algo = false;
-                if(hero.spd > enemy.spd){
+                int randomizer = rand()%20+1;
+                if(hero.spd > enemy.spd|| randomizer < 15){
                     cout << "you have successfully ran away!" << endl;
                     break;
             }
                 else{
                     cout << "you failed to run away!" << endl;
+                    algo = true;
                 
             }  
         }
         else if(choice ==4){
             algo = false;
                 hero.displayInfo();
+        }
+        else if(choice ==5){
+            algo = false;
+            enemy.displayInfo();
         }
         else{
             cout << "invalid input, try again" << endl;
