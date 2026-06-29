@@ -105,20 +105,29 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                     loot.giveLoot(hero);
                 }
                 int decision;
+                while(true){
                 cout << "would you like to:" << endl;
                 cout << "1. Continue to the next fight" << endl;
                 cout << "2. heal" << endl;
+                cout << "3. display info\n";
                 cin >> decision;
                 if(decision == 1){
                     cout << "you continue to the next fight" << endl;
+                    break;
                 }
                 else if(decision == 2){
                     hero.heal();
+                    break;
+                }
+                else if(decision == 3){
+                    hero.displayInfo();
+                    continue;
                 }
                 else{
                     cout << "invalid input, try again" << endl;
                     continue;
                 }
+            }
             break;
                 }
         }
@@ -154,6 +163,19 @@ void Game::levelThree(){
     combat(enemies);
 }
 void Game::Run() {
+    cout << R"(
+         _             _            _              _             _            _   _         _      
+       / /\      _   /\ \         _\ \          /\ \           /\ \         /\_\/\_\ _    /\ \    
+      / / /    / /\ /  \ \       /\__ \        /  \ \         /  \ \       / / / / //\_\ /  \ \   
+     / / /    / / // /\ \ \     / /_ \_\      / /\ \ \       / /\ \ \     /\ \/ \ \/ / // /\ \ \  
+    / / /_   / / // / /\ \_\   / / /\/_/     / / /\ \ \     / / /\ \ \   /  \____\__/ // / /\ \_\ 
+   / /_//_/\/ / // /_/_ \/_/  / / /         / / /  \ \_\   / / /  \ \_\ / /\/________// /_/_ \/_/ 
+  / _______/\/ // /____/\    / / /         / / /    \/_/  / / /   / / // / /\/_// / // /____/\    
+ / /  \____\  // /\____\/   / / / ____    / / /          / / /   / / // / /    / / // /\____\/    
+/_/ /\ \ /\ \// / /______  / /_/_/ ___/\ / / /________  / / /___/ / // / /    / / // / /______    
+\_\//_/ /_/ // / /_______\/_______/\__\// / /_________\/ / /____\/ / \/_/    / / // / /_______\   
+    \_\/\_\/ \/__________/\_______\/    \/____________/\/_________/          \/_/ \/__________/   
+                                                                                                  )"<< endl;
     hero.nameing();
     levelOne();
     if(hero.hp > 0){
