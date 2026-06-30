@@ -4,6 +4,7 @@
 class Enemy;
 class Hero {
 public:
+
 std::string name;
 int strength;
 int spd;

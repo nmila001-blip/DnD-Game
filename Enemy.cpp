@@ -4,7 +4,11 @@
 using namespace std;
 void Enemy::attack(Hero& hero) {
     int randomizer = rand()%25;
+    int criticalHit = rand()%100+1;
     int damage = strength + randomizer;
+    if(criticalHit <= 10){ // 10% chance for critical hit
+        damage *= 2;
+    }
     if (damage < 0) {
         damage = 0;
     }
