@@ -8,6 +8,8 @@ void Enemy::attack(Hero& hero) {
     int damage = strength + randomizer;
     if(criticalHit <= 10){ // 10% chance for critical hit
         damage *= 2;
+        cout << "Critical hit!" << endl;
+        
     }
     if (damage < 0) {
         damage = 0;
