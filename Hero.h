@@ -1,10 +1,11 @@
 #ifndef HERO_H
 #define HERO_H
 #include <string>
+#include "Weapon.h"
 class Enemy;
 class Hero {
 public:
-
+Weapon currentWeapon;
 std::string name;
 int strength;
 int spd;

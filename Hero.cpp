@@ -6,7 +6,7 @@ using namespace std;
 void Hero::attack(Enemy& enemy) {
     
     int criticalHit = rand()%100+1;
-    int randomizer = rand()%20+1;
+    int randomizer = currentWeapon.weaponBonus + rand() % (currentWeapon.maximumDamage - currentWeapon.minimumDamage+1) + currentWeapon.weaponSharpness/2;
     int damage = strength + randomizer;
     if(criticalHit <= 10){ // 10% chance for critical hit
         damage *= 2;
@@ -27,10 +27,9 @@ void Hero::displayInfo() {
     cout << "Speed: " << spd << endl;
     cout << "HP: " << hp << endl;
     cout << "Luck: " << luck << endl;
-    Weapon weapon;
-    weapon.displayBag();
+    currentWeapon.displayBag();
 }
-   void Hero::heal() {
+void Hero::heal() {
     int healAmount = rand()%50+1;
     hp += healAmount;
     if (hp > 100) {

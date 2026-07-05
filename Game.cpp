@@ -3,6 +3,7 @@
 #include "Hero.h"
 #include "loot.h"
 #include "Enemy.h"
+#include "Weapon.h"
 #include <vector>
 using namespace std;
 Hero hero;
@@ -53,8 +54,10 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
             cout << "1. Attack" << endl;
             cout << "2. Heal" << endl;
             cout << "3. run away" <<endl;
-            cout << "4. Display Info" << endl;
-            cout << "5. Display Enemy info" << endl;
+            cout << "4. Change Weapon" << endl;
+            cout << "5. Display Info" << endl;
+            cout << "6. Display Enemy info" << endl;
+            cout << "7. display your backpack" << endl;
             cin >> choice;
             if(choice == 1){
                 algo = true;
@@ -79,17 +82,25 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
             }  
         }
         else if(choice ==4){
-            algo = false;
-                hero.displayInfo();
+            algo = true;
+                hero.currentWeapon.equipWeapon(hero.currentWeapon);
         }
         else if(choice ==5){
             algo = false;
+            hero.displayInfo();
+        }
+        else if(choice ==6){
+            algo = false;
             enemy.displayInfo();
+        }
+        else if(choice == 7){
+            algo = true;
+            hero.currentWeapon.displayBag();
         }
         else{
             cout << "invalid input, try again" << endl;
             continue;
-        } 
+        }
         if(enemy.hp <= 0){
                     if(enemy.name == "Timmy_Tuff_Knuckles" && enemy.hp <= 0){
                     cout << "you defeated the boss\n";
@@ -110,6 +121,7 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                 cout << "1. Continue to the next fight" << endl;
                 cout << "2. heal" << endl;
                 cout << "3. display info\n";
+                
                 cin >> decision;
                 if(decision == 1){
                     cout << "you continue to the next fight" << endl;

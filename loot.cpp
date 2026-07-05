@@ -15,7 +15,8 @@ void Loot::giveLoot(Hero& hero) {
         string whatUGet = lootItems[rand()%lootItems.size()];
         if(whatUGet == "a legendary sword"){
             isUseful = true;
-            Weapon::yourWeapons.push_back(Weapon("The legendary sword", 100, 10, 24, 80));
+            Weapon legendarySword("The legendary sword", 100, 10, 24, 80);
+            hero.currentWeapon.addtobackpack(legendarySword);
         }
         else if(whatUGet == "a shield"){
             hero.hp += 20;
