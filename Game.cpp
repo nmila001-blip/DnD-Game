@@ -92,9 +92,9 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
         } 
         if(enemy.hp <= 0){
                     if(enemy.name == "Timmy_Tuff_Knuckles" && enemy.hp <= 0){
-                    cout << "you defeated the boss but wait a minute\n";
-                    cout << "and then you slowly become insane and later become the next boss\n";
-                    cout << "you can hear a new player is coming\n";
+                    cout << "you defeated the boss\n";
+                    cout << "and then you slowly become insane and later become the boss\n";
+                    cout << "you can hear a new player is coming get ready\n";
                     exit(0);
                 }else{
             cout << "you have defeated the " << enemy.name << "!" << endl;

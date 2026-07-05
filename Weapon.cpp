@@ -16,6 +16,11 @@ void Weapon::displayBag(){
         }
         stuff++;
         cout << stuff <<"Weapon in backpack: " << w.name <<   endl;
+        cout<< "Weapon damage range: " << w.minimumDamage << " - " << w.maximumDamage << endl;
+        cout << "Weapon sharpness: " << w.weaponSharpness << endl;
+        cout << "Weapon bonus: " << w.weaponBonus << endl;
+
+
         
     }
 }
@@ -24,6 +29,7 @@ void Weapon::equipWeapon(Weapon&weapon){
     if(yourWeapons.empty()){
         cout << "You have no weapons in your backpack to equip." << endl;
         exit(0);
+        
     }
     int nameofWeapon;
     cout << "Which weapon would you like to equip? (Enter the name)" << endl;
