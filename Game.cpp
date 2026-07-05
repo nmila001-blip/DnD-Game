@@ -73,6 +73,31 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                 int randomizer = rand()%20+1;
                 if(hero.spd > enemy.spd|| randomizer < 15){
                     cout << "you have successfully ran away!" << endl;
+                    int decision1;
+                while(true){
+                cout << "would you like to:" << endl;
+                cout << "1. Continue to the next fight" << endl;
+                cout << "2. heal" << endl;
+                cout << "3. display info\n";
+                
+                cin >> decision1;
+                if(decision1 == 1){
+                    cout << "you continue to the next fight" << endl;
+                    break;
+                }
+                else if(decision1 == 2){
+                    hero.heal();
+                    break;
+                }
+                else if(decision1 == 3){
+                    hero.displayInfo();
+                    continue;
+                }
+                else{
+                    cout << "invalid input, try again" << endl;
+                    continue;
+                }
+            }
                     break;
             }
                 else{
