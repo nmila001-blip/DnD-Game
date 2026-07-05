@@ -32,8 +32,13 @@ void Loot::giveLoot(Hero& hero) {
         }
         else if(whatUGet == "an explosion"){
             hero.hp -= 75;
-            isUseful = true;
+
+            isUseful = false;
             cout << "you found an explosion and took 75 damage!" << endl;
+            if(hero.hp <= 0){
+                cout << "you have died from the explosion!" << endl;
+                exit(0);
+            }
         }
         else if(whatUGet == "strength potion"){
             hero.strength += 5;

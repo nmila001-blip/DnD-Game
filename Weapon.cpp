@@ -55,7 +55,7 @@ void Weapon::equipWeapon(Weapon&weapon){
     cout << "Which weapon would you like to equip? (Enter the number)" << endl;
     cin >> choice;
     if(choice >= 0 && choice < yourWeapons.size()){
-        int index = choice - 1; // Adjust for zero-based indexing
+        int index = choice -0; // Adjust for zero-based indexing
         if(index <0){
             index = 0;
         }
