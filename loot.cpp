@@ -1,9 +1,11 @@
 #include <iostream>
 #include "loot.h"
 #include "Hero.h"
+#include "Weapon.h"
 
 using namespace std;
 void Loot::giveLoot(Hero& hero) {
+    bool isUseful = true;
     int lootChance = rand()%200+1 + hero.luck;
     vector<string> lootItems = {"a legendary sword", "a shield", "a potion","nothing useful just a stick","an explosion","an explosion" ,"potion", "a shield","a piece of armor", "strength potion","a ribbon"};
     if(lootChance <= 50){
@@ -12,28 +14,35 @@ void Loot::giveLoot(Hero& hero) {
     }else{
         string whatUGet = lootItems[rand()%lootItems.size()];
         if(whatUGet == "a legendary sword"){
-            hero.strength += 35;
+            isUseful = true;
+            Weapon::yourWeapons.push_back(Weapon("The legendary sword", 100, 10, 24, 80));
         }
         else if(whatUGet == "a shield"){
             hero.hp += 20;
+            isUseful = true;
         }
         else if(whatUGet == "a potion"){
             hero.heal();
+            isUseful = true;
         }
         else if(whatUGet == "a piece of armor"){
             hero.hp += 10;
+            isUseful = true;
         }
         else if(whatUGet == "an explosion"){
             hero.hp -= 75;
+            isUseful = true;
+            cout << "you found an explosion and took 75 damage!" << endl;
         }
         else if(whatUGet == "strength potion"){
             hero.strength += 5;
+            isUseful = true;
         }else{
             cout << "you found " << whatUGet << " but it was useless" << endl;
+            isUseful = false;
         }
-        if(true){
-         cout << "you found " << whatUGet << endl;
+        if(isUseful){
+            cout << "you found " << whatUGet << endl;
         }
-
     }
     }
