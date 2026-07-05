@@ -34,8 +34,8 @@ void Weapon::displayBag(){
             exit(0);
         }
         stuff++;
-        cout << stuff <<"Weapon in backpack: " << w.name <<   endl;
-        cout<< ".Weapon damage range: " << w.minimumDamage << " - " << w.maximumDamage << endl;
+        cout << stuff <<".Weapon in backpack: " << w.name <<   endl;
+        cout<< "Weapon damage range: " << w.minimumDamage << " - " << w.maximumDamage << endl;
         cout << "Weapon sharpness: " << w.weaponSharpness << endl;
         cout << "Weapon bonus: " << w.weaponBonus << endl;
 
@@ -50,13 +50,15 @@ void Weapon::equipWeapon(Weapon&weapon){
         exit(0);
         
     }
+    while(true){
     int choice;
     cout << "Which weapon would you like to equip? (Enter the number)" << endl;
     cin >> choice;
-    while(true){
     if(choice >= 0 && choice < yourWeapons.size()){
         int index = choice - 1; // Adjust for zero-based indexing
-        
+        if(index <0){
+            index = 0;
+        }
         *this = yourWeapons[index]; // Assign the selected weapon to the current object
         cout << "you have equipped: " << yourWeapons[index].name << endl;
         break;
