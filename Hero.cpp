@@ -41,14 +41,14 @@ void Hero::nameing() {
     while(true){
     cout << "what is your name?" << endl;
     getline(cin, name);
-    cout << "what is your strength?" << endl;
+    cout << "pick a number between 0-20 for your strength:" << endl;
     if(!(cin >> strength)){
         cout << "invalid input, try again" << endl;
         cin.clear();
         cin.ignore(500, '\n');
         continue;
     }
-    cout << "what is your speed?" << endl;
+    cout << "pick a number between 0-20 for your speed:" << endl;
     if(!(cin >> spd)){
         cout << "invalid input, try again" << endl;
         cin.clear();
