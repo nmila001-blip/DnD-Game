@@ -190,8 +190,8 @@ void Game::levelOne() {
 }
 void Game::levelTwo(){
     vector<Enemy> enemies;
-    enemies.push_back(Enemy("living armor", 15, 5, 80));
-    enemies.push_back(Enemy("living canon", 20, 1, 150));
+    enemies.push_back(Enemy("living armor", 10, 5, 75));
+    enemies.push_back(Enemy("living canon", 20, 1, 80));
     combat(enemies);
 }
 void Game::levelThree(){
