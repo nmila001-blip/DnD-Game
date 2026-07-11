@@ -14,7 +14,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
     for(Enemy& enemy : enemies) {
         if(enemy.name =="zombie"){
             cout << "You smell a pungent smell\n";
-            cout << "and it grows stronger as time goes time\n";
+            cout << "and it grows stronger as time goes by\n";
             cout << "and then a group of zombies appear\n";
         }
         else if(enemy.name == "skeleton"){
@@ -24,7 +24,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
         else if(enemy.name == "living armor"){
             cout << "you enter a room full of armour and you sense some thing ominous\n";
             cout << "almost as if their alive?\n";
-            cout << "then suddenly a suit of armor stumbles forward\n then sprints twords you,raises its sword and brings it down hard\n";
+            cout << "then suddenly a suit of armor stumbles forward\n then sprints towards you,raises its sword and brings it down hard\n";
             enemy.attack(hero);
             if(hero.hp <= 0){
                 cout << "you have been defeated, better luck next time" << endl;
