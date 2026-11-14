@@ -18,7 +18,7 @@ void Loot::giveLoot(Hero& hero) {
             hero.currentWeapon.addtobackpack(legendarySword);
         }
         else if(whatUGet == "a shield"){
-            hero.hp += 20;
+            hero.defense += 5;
             isUseful = true;
         }
         else if(whatUGet == "a potion"){

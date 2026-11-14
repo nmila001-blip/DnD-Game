@@ -9,7 +9,6 @@ std::string name;
 int weaponBonus;
 int minimumDamage;
 int maximumDamage;
-int stuff = 0;
 static std::vector<Weapon> yourWeapons;
 Weapon(std::string name1, int weaponSharpness1, int weaponBonus1, int minimumDam, int maxDam) : name(name1), weaponSharpness(weaponSharpness1), weaponBonus(weaponBonus1), minimumDamage(minimumDam), maximumDamage(maxDam){
 }

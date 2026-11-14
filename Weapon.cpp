@@ -23,48 +23,45 @@ void Weapon::addtobackpack(Weapon&weapon){
         continue;
     }   
 }
-    cout << "Adding weapon to backpack: " << weapon.name << endl;
-    yourWeapons.push_back(weapon);
 }
 void Weapon::displayBag(){
 
+    if(yourWeapons.empty()){
+        cout << "You have no weapons in your backpack." << endl;
+        return;
+    }
+    int stuff = 0;
     for(Weapon& w : yourWeapons){
-        if(yourWeapons.empty()){
-            cout << "You have no weapons in your backpack." << endl;
-            exit(0);
-        }
         stuff++;
         cout << stuff <<".Weapon in backpack: " << w.name <<   endl;
         cout<< "Weapon damage range: " << w.minimumDamage << " - " << w.maximumDamage << endl;
         cout << "Weapon sharpness: " << w.weaponSharpness << endl;
-        cout << "Weapon bonus: " << w.weaponBonus << endl;
-
-
-        
+        cout << "Weapon bonus: " << w.weaponBonus << endl;   
     }
 }
 void Weapon::equipWeapon(Weapon&weapon){
-    displayBag();
     if(yourWeapons.empty()){
         cout << "You have no weapons in your backpack to equip." << endl;
-        exit(0);
+        return;
         
     }
+    displayBag();
     while(true){
     int choice;
     cout << "Which weapon would you like to equip? (Enter the number)" << endl;
-    cin >> choice;
-    if(choice >= 0 && choice < yourWeapons.size()){
-        int index = choice+1; // Adjust for zero-based indexing
-        if(index <0){
-            index = 0;
+    if(!(cin >> choice)){
+            cin.clear();
+            cin.ignore(500, '\n');
+            cout << "Invalid choice. Please select a valid weapon number." << endl;
+            continue;
         }
+    if(choice >= 1 && choice <= static_cast<int>(yourWeapons.size())){
+        int index = choice-1; // Adjust for zero-based indexing
         *this = yourWeapons[index];
         cout << "you have equipped: " << yourWeapons[index].name << endl;
         break;
 
     }else{
-        
         cout << "Invalid choice. Please select a valid weapon number." << endl;
     }
 }

@@ -27,4 +27,5 @@ void Enemy::attack(Hero& hero) {
         cout << "Strength: " << strength << endl;
         cout << "Speed: " << spd << endl;
         cout << "HP: " << hp << endl;
+        cout << "Defense: " << defense << endl;    
     }
