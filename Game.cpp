@@ -121,7 +121,7 @@ void Game::combat(std::vector<Enemy> &enemies) {
             enemy.displayInfo();
         }
         else if(choice == 7){
-            algo = true;
+            algo = false;
             hero.currentWeapon.displayBag();
         }
         else{

@@ -33,7 +33,7 @@ void Weapon::displayBag(){
     int stuff = 0;
     for(Weapon& w : yourWeapons){
         stuff++;
-        cout << stuff <<".Weapon in backpack: " << w.name <<   endl;
+        cout << stuff << ". [NEW BUILD] Weapon in backpack: " << w.name << endl;
         cout<< "Weapon damage range: " << w.minimumDamage << " - " << w.maximumDamage << endl;
         cout << "Weapon sharpness: " << w.weaponSharpness << endl;
         cout << "Weapon bonus: " << w.weaponBonus << endl;   

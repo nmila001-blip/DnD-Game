@@ -3,7 +3,7 @@
 #include "Hero.h"
 using namespace std;
 void Enemy::attack(Hero& hero) {
-    int randomizer = rand()%25;
+    int randomizer = rand()%10+1;
     int criticalHit = rand()%100+1;
     int damage = (strength + randomizer) - hero.defense;
     if(criticalHit <= 10){ // 10% chance for critical hit
