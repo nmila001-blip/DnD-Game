@@ -59,7 +59,7 @@ void Weapon::equipWeapon(Weapon&weapon){
         if(index <0){
             index = 0;
         }
-        *this = yourWeapons[index]; // Assign the selected weapon to the current object
+        *this = yourWeapons[index];
         cout << "you have equipped: " << yourWeapons[index].name << endl;
         break;
 
