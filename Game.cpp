@@ -186,19 +186,19 @@ void Game::combat(std::vector<Enemy> &enemies) {
 }
 void Game::levelOne() {
     vector<Enemy> enemies;
-    enemies.push_back(Enemy("zombie", 5, 5, 30));
-    enemies.push_back(Enemy("skeleton", 2, 10, 50));
+    enemies.push_back(Enemy("zombie", 5, 5, 20, 5));
+    enemies.push_back(Enemy("skeleton", 2, 10, 40, 5));
     combat(enemies);
 }
 void Game::levelTwo(){
     vector<Enemy> enemies;
-    enemies.push_back(Enemy("living armor", 10, 5, 75));
-    enemies.push_back(Enemy("living canon", 20, 1, 80));
+    enemies.push_back(Enemy("living armor", 10, 5, 60, 10));
+    enemies.push_back(Enemy("living canon", 15, 1, 80, 0));
     combat(enemies);
 }
 void Game::levelThree(){
     vector<Enemy> enemies;
-    enemies.push_back(Enemy("Timmy_Tuff_Knuckles", 30, 20, 300));
+    enemies.push_back(Enemy("Timmy_Tuff_Knuckles", 20, 20, 100, 15));
     combat(enemies);
 }
 void Game::Run() {
