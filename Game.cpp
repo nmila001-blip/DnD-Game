@@ -39,15 +39,14 @@ void Game::combat(std::vector<Enemy> &enemies) {
                 break;
             }
         }
-if(enemy.name == "Timmy_Tuff_Knuckles") {
-    cout << "you enter the final floor so close to your final goal of beating the dungeon\n";
-    cout << "hello there adventurer, he says in a deep voice\n";
-    cout << "OMG im not ready for this you thought to yourself\n";
-    cout << "Oh having second thoughts are we? he says in a mocking tone\n";
-    cout << "you start to feel a sense of dread and fear\n";
-    cout << "now is when you decide your fate for once and for all\n";
-}
-
+        if(enemy.name == "Timmy_Tuff_Knuckles") {
+            cout << "you enter the final floor so close to your final goal of beating the dungeon\n";
+            cout << "hello there adventurer, he says in a deep voice\n";
+            cout << "OMG im not ready for this you thought to yourself\n";
+            cout << "Oh having second thoughts are we? he says in a mocking tone\n";
+            cout << "you start to feel a sense of dread and fear\n";
+            cout << "now is when you decide your fate for once and for all\n";
+        }
         do{
             int choice;
             cout << "Would you like to: " << endl;
@@ -79,7 +78,6 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                 cout << "1. Continue to the next fight" << endl;
                 cout << "2. heal" << endl;
                 cout << "3. display info\n";
-                
                 cin >> decision1;
                 if(decision1 == 1){
                     cout << "you continue to the next fight" << endl;
@@ -97,10 +95,14 @@ if(enemy.name == "Timmy_Tuff_Knuckles") {
                     cout << "invalid input, try again" << endl;
                     continue;
                 }
-            }
+            } 
                     break;
             }
-                else{
+            else if(hero.spd == enemy.spd && randomizer < 15){
+                cout << "you have successfully ran away!" << endl;
+                break;
+            }
+            else{
                     cout << "you failed to run away!" << endl;
                     algo = true;
                 

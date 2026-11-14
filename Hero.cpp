@@ -4,7 +4,6 @@
 #include "Weapon.h"
 using namespace std;
 void Hero::attack(Enemy& enemy) {
-    
     int criticalHit = rand()%100+1;
     int randomizer = currentWeapon.weaponBonus + rand() % (currentWeapon.maximumDamage - currentWeapon.minimumDamage+1) + currentWeapon.weaponSharpness/2;
     int damage = strength + randomizer;
@@ -15,7 +14,7 @@ void Hero::attack(Enemy& enemy) {
     if (damage < 0) {
         damage = 0;
     }
-    enemy.hp -= damage;
+    enemy.hp -= damage += enemy.defense;
     if (enemy.hp < 0) {
         enemy.hp = 0;
     }
